@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Шифр Цезаря</title>
+</head>
+<body>
+    
+    <input id='numberShifr' type="tel" placeholder='Введите сдвиг'>
+    <input id='textShifr' onkeyup={shifr()} type="text" placeholder='Введите текст для шифрования (без пробелов)'>
+    <input id='textDeshifr' onkeyup={deshifr()} type="text" placeholder='Введите текст для дешифрования (без пробелов)'>
+    <div> <p>Зашифрованная: </p> <p id='shifr'>Результат</p></div>
+    <div> <p>Расшифрованная: </p> <p id='deshifr'>Результат</p></div>
+
+    <script src='index.js'></script>
+</body>
+</html>
