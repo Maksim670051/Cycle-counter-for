@@ -17,27 +17,19 @@ function shifr() {
     if (isNaN(number)) document.getElementById('shifr').innerHTML = '<p class="error">Вы ввели неверный шаг сдвига</p>';
     else {
 
-        if (number >= 0) {
+        for (let i = 0; i < text.length; ++i) {
 
-            for (let i = 0; i < text.length; ++i) {
-
-                let a = text[i];
+            let a = text[i];
+            // Шифрование для положительного и отрацательного шага
+            if (number >= 0){
 
                 for (let k = 0; k < StrArray.length; ++k) if (a == StrArray[k]) index = (k + number) % 33;
-
                 newText += StrArray[index];
 
             }
-
-        }
-        else {
-
-            for (let i = 0; i < text.length; ++i) {
-
-                let a = text[i];
+            else{
 
                 for (let k = 0; k < StrArrayReverse.length; ++k) if (a == StrArrayReverse[k]) index = (k + Math.abs(number)) % 33;
-
                 newText += StrArrayReverse[index];
 
             }
@@ -65,29 +57,21 @@ function deshifr() {
     if (isNaN(number)) document.getElementById('deshifr').innerHTML = '<p class="error">Вы ввели неверный шаг сдвига</p>';
     else {
 
-        if (number <= 0) {
+        for (let i = 0; i < text.length; ++i) {
 
-            for (let i = 0; i < text.length; ++i) {
+            let a = text[i];
+            // Дешифрование для положительного и отрацатльного шага
+            if(number <= 0){
 
-                let a = text[i];
-
-                for (let k = 0; k < StrArray.length; ++k) if (a == StrArray[k]) return index = (k - number) % 33;
-
+                for (let k = 0; k < StrArray.length; ++k) if (a == StrArray[k]) index = (k + Math.abs(number)) % 33;
                 newText += StrArray[index];
 
             }
-
-        }
-        else {
-
-            for (let i = 0; i < text.length; ++i) {
-
-                let a = text[i];
+            else{
 
                 for (let k = 0; k < StrArrayReverse.length; ++k) if (a == StrArrayReverse[k]) index = (k + Math.abs(number)) % 33;
-
                 newText += StrArrayReverse[index];
-
+                
             }
 
         }
